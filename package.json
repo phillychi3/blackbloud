@@ -1,0 +1,18 @@
+{
+  "name": "blackcloud",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "phillychi3",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^13.2.0",
+    "glob": "^7.1.7",
+    "kasu.nhentaiapi.js": "^3.9.3",
+    "request": "^2.88.2",
+    "url": "^0.11.0"
+  }
+}
