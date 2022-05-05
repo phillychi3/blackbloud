@@ -8,11 +8,12 @@ napi.connection.start()
 
 module.exports = {
     name: "nhentai",
-    description: "returns websocket ping",
+    description: "nhentai",
     type: 'CHAT_INPUT',// MESSAGE,USER(右鍵指令)
     perms: "",//權限
     ephemeral: false,//只有自己看見
     status: true,//啟用停用指令
+    nsfw: true,
     options: [
         {
             name: 'number',
@@ -45,7 +46,7 @@ module.exports = {
             return embed
             }catch(e){
                 console.log(e)
-                return "you not enable discord anti horny"
+                return "discord anti horny mute this"
             }
 
     },

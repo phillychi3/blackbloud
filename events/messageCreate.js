@@ -21,7 +21,8 @@ client.on("messageCreate", async (message) => {
         userid,
         msgid
     }
-    if(urls.includes(url.parse(msg.content).host)){
+    
+    if(urls.includes(url.parse(msg.content).host) && channel.nsfw){
         const embed = await core(msg.content)
         console.log(`[${new Date().getFullYear()}/${new Date().getMonth()+1}/${new Date().getDate()} ${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()}] ${msg.userid} ${msg.content} => ${message.guild.name}:${message.channel.name}`)
         msg.channel.send({ embeds: [embed] });

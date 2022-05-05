@@ -3,11 +3,12 @@ const {inspect} = require("util");
 const request = require('request');
 module.exports = {
     name: "rule34",
-    description: "returns websocket ping",
+    description: "image from rule34",
     type: 'CHAT_INPUT',// MESSAGE,USER(右鍵指令)
     perms: "",//權限
     ephemeral: false,//只有自己看見
     status: true,//啟用停用指令
+    nsfw: true,
     options: [
         {
             name: 'tag',
@@ -35,7 +36,7 @@ module.exports = {
             interaction.followUp({embeds: [embed]})
             }catch(e){
                 console.log(e)
-                interaction.followUp("no horny image you tiny dick")
+                interaction.followUp("no horny image")
             }
         }
         })

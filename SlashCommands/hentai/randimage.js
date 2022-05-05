@@ -3,45 +3,46 @@ const {inspect} = require("util");
 const request = require('request');
 module.exports = {
     name: "rimage",
-    description: "returns websocket ping",
+    description: "random image",
     type: 'CHAT_INPUT',// MESSAGE,USER(右鍵指令)
     perms: "",//權限
     ephemeral: false,//只有自己看見
     status: true,//啟用停用指令
+    nsfw: true,
     options: [
         {
             name: 'tentacle',
-            description: '(處手)tentacle',
+            description: '處手 tentacle',
             type: 'SUB_COMMAND',
         },
         {
             name:'neko',
-            description:'(貓娘)neko',
+            description:'貓娘 neko',
             type:'SUB_COMMAND',
         },
         {
             name:'futa',
-            description:'(扶他)futa',
+            description:'扶他 futa',
             type:'SUB_COMMAND',
         },
         {
             name:'bondage',
-            description:'(緊縛)bondage',
+            description:'緊縛 bondage',
             type:'SUB_COMMAND',
         },
         {
             name:'swimsuit',
-            description:'(死庫水)swimsuit',
+            description:'死庫水 swimsuit',
             type:'SUB_COMMAND',
         },
         {
             name:'yaoi',
-            description:'(甲)yaoi',
+            description:'甲 yaoi',
             type:'SUB_COMMAND',
         },
         {
             name:'yandere',
-            description:'(病嬌)yandere',
+            description:'病嬌 yandere',
             type:'SUB_COMMAND',
         },
         {
@@ -51,12 +52,12 @@ module.exports = {
         },
         {
             name:'arknights',
-            description:'(明日方舟)arknights',
+            description:'明日方舟 arknights',
             type:'SUB_COMMAND',
         },
         {
-            name:'genshin impact',
-            description:'(原神)genshin impact',
+            name:'genshin_impact',
+            description:'原神 genshin impact',
             type:'SUB_COMMAND',
         },
 
@@ -74,8 +75,6 @@ module.exports = {
         var cmd1 = interaction.options.getSubcommand();
         if(cmd1=='neko'){
             cmd1='cat_ears'
-        }else if(cmd1=='genshin impact'){
-            cmd1='genshin_impact'
         }
 
         if(rand == 0){
@@ -89,7 +88,7 @@ module.exports = {
                     interaction.followUp({embeds: [embed]})
                     }catch(e){
                         console.log(e)
-                        interaction.followUp("no horny image you tiny dick")
+                        interaction.followUp("no horny image")
                     }
                 }
                 })
@@ -105,7 +104,7 @@ module.exports = {
                     interaction.followUp({embeds: [embed]})
                     }catch(e){
                         console.log(e)
-                        interaction.followUp("no horny image you tiny dick")
+                        interaction.followUp("no horny image")
                     }
                 }
                 })

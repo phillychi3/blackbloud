@@ -7,6 +7,9 @@ client.on("interactionCreate", async (interaction) => {
     if (interaction.isCommand()) {
 
         const cmd = client.slashCommands.get(interaction.commandName);
+        if(cmd.nsfw) {
+            if(!interaction.channel.nsfw) return interaction.reply({embeds: [new MessageEmbed().setColor('RED').setDescription(`❌ 你需要在NSFW頻道執行此指令`)]}).catch((e) => {console.log(e)});
+        }
         if (!cmd) return interaction.followUp({embeds: [new MessageEmbed().setColor('RED').setDescription(`❌ 執行指令時發生錯誤`)]}).catch();
             if (cmd.ephemeral) {
                 await interaction.deferReply({ ephemeral: true }).catch();
