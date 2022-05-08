@@ -1,6 +1,6 @@
 const { Client, CommandInteraction, MessageEmbed } = require("discord.js");
-const {inspect} = require("util");
 const request = require('request');
+const disabletag=[loli,shota]
 module.exports = {
     name: "rule34",
     description: "image from rule34",
@@ -25,6 +25,10 @@ module.exports = {
      */
     run: async (client, interaction, args) => {
         const name = interaction.options.getString("tag");
+        if(disabletag.includes(name)){
+            interaction.reply("tag is disable from discord")
+            return  
+        }
         request({url:`https://r34-json-api.herokuapp.com/posts?tags=${name}&limit=20`,json: true}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
             try{

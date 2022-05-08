@@ -48,8 +48,8 @@ module.exports = async (client) => {
         //  })        
 
           
-        // await client.guilds.cache.forEach(guild)
-        //     .get("918109029555912704")
+        // await client.guilds.cache
+        //     .get("623509187371991060")
         //     .commands.set(arrayOfSlashCommands);
 
         // Register for all the guilds the bot is in

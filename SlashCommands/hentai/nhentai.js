@@ -1,5 +1,4 @@
 const { Client, CommandInteraction, MessageEmbed } = require("discord.js");
-const {inspect} = require("util");
 const nhentai = require('kasu.nhentaiapi.js');
 const napi = new nhentai();
 napi.url = "https://nhentai.net"
@@ -31,7 +30,6 @@ module.exports = {
     run: async (client, interaction, args) => {
         const number = interaction.options.getString("number"); 
         try{
-
             const data = await napi.getID(number).json()
             const embed = new MessageEmbed()
             .setAuthor({ name: 'BlackCloud', iconURL: 'https://cdn.discordapp.com/attachments/922733774633050112/969011518861623376/256.png', url: 'https://discord.gg/m6qKNZTaeR' })
@@ -48,6 +46,5 @@ module.exports = {
                 console.log(e)
                 return "discord anti horny mute this"
             }
-
     },
 };

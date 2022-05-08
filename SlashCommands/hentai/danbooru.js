@@ -1,5 +1,8 @@
 const { Client, CommandInteraction, MessageEmbed } = require("discord.js");
 const request = require('request');
+
+const disabletag=[loli,shota]
+
 module.exports = {
     name: "image",
     description: "image",
@@ -11,7 +14,7 @@ module.exports = {
     options: [
         {
             name: 'tag',
-            description: 'tag of image',
+            description: 'this tag of image',
             type: 'STRING',
             required: true,
         },
@@ -24,6 +27,10 @@ module.exports = {
      */
     run: async (client, interaction, args) => {
         const name = interaction.options.getString("tag");
+        if(disabletag.includes(name)){
+            interaction.reply("tag is disable from discord")
+            return  
+        }
         request({url:`https://danbooru.donmai.us/posts.json?tags=${name}`,json: true}, function (error, response, body) {
         if (!error && response.statusCode == 200) {
             try{
@@ -37,12 +44,7 @@ module.exports = {
                 interaction.followUp("no horny image")
             }
 
-
-            
-
         }
         })
-
-
     },
 };

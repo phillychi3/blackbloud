@@ -1,5 +1,4 @@
 const { Client, CommandInteraction, MessageEmbed } = require("discord.js");
-const {inspect} = require("util");
 const request = require('request');
 module.exports = {
     name: "rimage",
@@ -58,6 +57,11 @@ module.exports = {
         {
             name:'genshin_impact',
             description:'原神 genshin impact',
+            type:'SUB_COMMAND',
+        },
+        {
+            name:'furry',
+            description:'獸控 furry',
             type:'SUB_COMMAND',
         },
 
