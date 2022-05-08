@@ -43,9 +43,9 @@ module.exports = async (client) => {
     client.on("ready", async () => {
         // Register for a single guild
 
-        await client.guilds.cache.forEach((guild) => {
-            guild.commands.set(arrayOfSlashCommands);
-          })        
+        //await client.guilds.cache.forEach((guild) => {
+        //    guild.commands.set(arrayOfSlashCommands);
+        //  })        
 
           
         // await client.guilds.cache.forEach(guild)
