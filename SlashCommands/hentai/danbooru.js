@@ -1,7 +1,7 @@
 const { Client, CommandInteraction, MessageEmbed } = require("discord.js");
 const request = require('request');
 
-const disabletag=[loli,shota]
+const disabletag=["loli","shota"]
 
 module.exports = {
     name: "image",
