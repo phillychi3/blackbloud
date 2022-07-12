@@ -3,7 +3,7 @@ const url = require('url');
 const core = require("../cmds/hentaicore.js");
 
 
-const urls = ["www.pixiv.net","nhentai.net"]
+const urls = ["www.pixiv.net"]
 client.on("messageCreate", async (message) => {
     if (
         !message.guild
